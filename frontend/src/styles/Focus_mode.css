@@ -1,0 +1,30 @@
+.Pomodoro {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: none;
+    min-height: 100vh;
+    padding: 20px;
+    box-sizing: border-box;
+    text-align: center;
+    margin: 0;
+}
+
+.Temporizator {
+    font-size: 4rem;
+    margin: 20px 0;
+    width: 100%;
+}
+
+.btn-section {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+.Reiniciar {
+    margin-left: 5px;
+}

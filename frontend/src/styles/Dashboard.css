@@ -1,0 +1,41 @@
+
+.dashboardPage {
+  display: flex;
+  flex-direction: column; 
+  align-items: center;    
+  justify-content: center; 
+  min-height: 100vh;      
+  width: 100%;
+}
+
+.DashboardGoalssection{
+  display: flex;
+  justify-content: center;  
+  margin-top: 30px;
+  background-color: #292828;
+}
+
+.calendar-section {
+  justify-content: center; 
+  margin-top: 20px;
+  align-items: center;
+  text-align: center;
+
+}
+.tittle-section {
+  display: flex;
+  justify-content: left; 
+  align-items: left;
+  text-align: left;
+  flex-direction: column;
+  gap: 0px;
+  margin-right: 140px;
+  border-radius: 12px;
+  background-color: #292828;
+  padding: 15px;
+}
+.d1 {
+  color: #1a4e82;
+  align-content: left;
+  margin-right: 70%;
+}

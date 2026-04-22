@@ -1,0 +1,28 @@
+.react-calendar {
+  width: 100% !important;
+  border: none;
+  box-shadow: 0 4px 12px rgba(87, 86, 86, 0.1);
+  background-color: #292828;
+  border-radius: 3%;
+}
+
+.react-calendar__tile:enabled:hover {
+  background-color: #007bff;
+  border-radius: 5px;
+}
+
+.react-calendar__tile--active {
+  background: #007bff !important; 
+  color: rgb(230, 226, 226);
+}
+
+.react-calendar__tile--now {
+  background: #007bff !important; 
+  border-radius: 6px;             
+  font-weight: bold;              
+  color: #f9f8f8;                  
+}
+.react-calendar__month-view__days__day--weekend {
+  color: #137018 !important; /
+   
+}
