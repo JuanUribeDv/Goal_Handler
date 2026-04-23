@@ -126,7 +126,7 @@ Accede a PostgreSQL desde tu terminal, crea la base de datos con el nombre espec
 
 ⚙️ Estructura del proyecto:
 
-
+```
 pry_goal_handler/
 ├── .gitignore
 ├── README.md
@@ -185,5 +185,4 @@ pry_goal_handler/
             ├── galery.js
             ├── goals.js
             └── journal.js
-
-
+```
