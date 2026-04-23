@@ -124,6 +124,66 @@ Accede a PostgreSQL desde tu terminal, crea la base de datos con el nombre espec
 - `npm run dev` - Inicia el servidor de desarrollo
 
 
+⚙️ Estructura del proyecto:
 
+
+pry_goal_handler/
+├── .gitignore
+├── README.md
+│
+├── frontend/
+│   ├── index.html
+│   ├── package.json
+│   ├── vite.config.js
+│   ├── eslint.config.js
+│   │
+│   ├── public/
+│   │   └── vite.svg
+│   │
+│   └── src/
+│       ├── main.jsx
+│       ├── App.jsx
+│       │
+│       ├── assets/
+│       │   └── react.svg
+│       │
+│       ├── components/
+│       │   └── Sidebar.jsx
+│       │
+│       ├── Pages/
+│       │   ├── Dashboard.jsx
+│       │   ├── Focus_mode.jsx
+│       │   ├── Galery.jsx
+│       │   ├── Goals.jsx
+│       │   └── Journal.jsx
+│       │
+│       ├── services/
+│       │   ├── apiClient.js
+│       │   ├── Dashboardservices.js
+│       │   ├── Galeryservices.js
+│       │   ├── Goalservices.js
+│       │   └── Journalservices.js
+│       │
+│       └── styles/
+│           ├── Calendar.css
+│           ├── Dashboard.css
+│           ├── Focus_mode.css
+│           ├── Galery.css
+│           ├── Goals.css
+│           ├── index.css
+│           ├── Journal.css
+│           └── Sidebar.css
+│
+└── backend/
+    ├── package.json
+    │
+    └── src/
+        ├── index.js
+        ├── db.js
+        │
+        └── routes/
+            ├── galery.js
+            ├── goals.js
+            └── journal.js
 
 
