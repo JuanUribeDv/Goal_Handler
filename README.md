@@ -117,15 +117,12 @@ Accede a PostgreSQL desde tu terminal, crea la base de datos con el nombre espec
 **Backend:**
 - `npm install` - Instala las dependencias necesarias para el proyecto
 - `npm run dev` - Inicia el servidor en modo desarrollo con auto-reload
-- `npm start` - Inicia el servidor en producción
-- `npm test` - Ejecuta las pruebas
+
 
 **Frontend:**
 - `npm install` - Instala las dependencias necesarias para el proyecto
 - `npm run dev` - Inicia el servidor de desarrollo
-- `npm run build` - Genera el build para producción
-- `npm run lint` - Verifica la calidad del código
-- `npm run preview` - Vista previa del build de producción
+
 
 
 
