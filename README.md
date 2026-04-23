@@ -1,25 +1,25 @@
 🎯 Proyecto Goal_Handler 🎯
 
-Una app web intuitiva para resgitrar y gestionar metas, también una zona de descarga mental llamada journal donde se registran progresos diarios o incluso pensamientos con la intención de mantener una mentalidad mas ordenada y mas enfocada, ideal para organizar rutinas y llevar un registro eficaz de mis metas.
+Una app web intuitiva para registrar y gestionar metas, también una zona de descarga mental llamada journal donde se registran progresos diarios o incluso pensamientos con la intención de mantener una mentalidad más ordenada y más enfocada, ideal para organizar rutinas y llevar un registro eficaz de mis metas.
 
 
-✨ Principales caracteristicas 
+✨ Principales Características 
 
 Apartado de menú:
-📊 Dashboard amigable: un dashboard que permite visualizar las metas previamente creadas, para poder recordarlas al entrar en contacto con la web, contiene un calendario para organizar rutinas con dates especificos. 
+📊 Dashboard amigable: un dashboard que permite visualizar las metas previamente creadas, para poder recordarlas al entrar en contacto con la web, contiene un calendario para organizar rutinas con fechas específicas. 
 
-Apartado de Metas y pensamientos:
-🧠 Goal: Un apartado especifico para poder registrar metas, con sus detalles y una fechas limites de realización de las mismas.
+Apartado de Metas y Pensamientos:
+🧠 Goal: Un apartado específico para poder registrar metas, con sus detalles y una fechas límite de realización de las mismas.
 
-📗 Journal: Un apartado diseñado especificamente para descarga mental, permitiendo al usuario despejar su mente de cosas que lo retrasan en su camino de conseguir sus objetivos, ideal para anotar pensamientos, emociones y dejar que todos esos estimulos quedén plasmados en este apartado en lugar de nuestro cerebro. 
+📗 Journal: Un apartado diseñado específicamente para descarga mental, permitiendo al usuario despejar su mente de cosas que lo retrasan en su camino de conseguir sus objetivos, ideal para anotar pensamientos, emociones y dejar que todos esos estímulos queden plasmados en este apartado en lugar de nuestro cerebro. 
 
 Apartado de productividad: 
-⏱️ Focus Mode: Un modulo que contiene un temporizador basandose en el método de pomodoro, promoviendo la efectividad a la hora de trabajar, cuenta con los 25 minutos de trabajo sin interrupciones y 10 minutos de descanso para relajar la mente antes del siguiente "split". 
+⏱️ Focus Mode: Un módulo que contiene un temporizador basándose en el método de pomodoro, promoviendo la efectividad a la hora de trabajar, cuenta con los 25 minutos de trabajo sin interrupciones y 10 minutos de descanso para relajar la mente antes del siguiente "split". 
 
-Apartado de conseguido:
-🏆 Galery: Un modulo donde se guardan las metas cumplidas, basandose en la estrategia de observar metas alcanzadas para generar un bust de motivación, permitiendole al usuario tener una mentalidad optimista para el siguiente objetivo.
+Apartado de Conseguido:
+🏆 Galery: Un módulo donde se guardan las metas cumplidas, basándose en la estrategia de observar metas alcanzadas para generar un boost de motivación, permitiéndole al usuario tener una mentalidad optimista para el siguiente objetivo.
 
-🛠️Tecnologias usadas
+🛠️ Tecnologías Usadas
 
 ⬅️ Backend: 
 Node.js
@@ -38,9 +38,9 @@ Axios 1.13.6 (Cliente HTTP)
 React Calendar 6.0.1 (Componente de calendario)
 
 
-⚙️ Proceso de instalación y configuración 
+⚙️ Proceso de Instalación y Configuración 
 
-**Requisitos previos:**
+**Requisitos Previos:**
 - Node.js (v16 o superior)
 - npm o yarn
 - PostgreSQL instalado y en ejecución
@@ -48,7 +48,7 @@ React Calendar 6.0.1 (Componente de calendario)
 
 ---
 
-### 1. Clonar el repositorio
+### 1. Clonar el Repositorio
 
 Clona el repositorio en tu máquina local usando Git.
 
@@ -112,16 +112,20 @@ Accede a PostgreSQL desde tu terminal, crea la base de datos con el nombre espec
 
 ---
 
-### 5. Scripts disponibles
+### 5. Scripts Disponibles
 
 **Backend:**
-```npm install``` - Instala las dependencias necesarias para el proyecto.
-```npm run dev``` - Inicia el servidor en modo desarrollo con auto-reload.
-
+- `npm install` - Instala las dependencias necesarias para el proyecto
+- `npm run dev` - Inicia el servidor en modo desarrollo con auto-reload
+- `npm start` - Inicia el servidor en producción
+- `npm test` - Ejecuta las pruebas
 
 **Frontend:**
-```npm install``` - Instala las dependencias necesarias para el proyecto.
-```npm run dev``` - Inicia el servidor en modo desarrollo
+- `npm install` - Instala las dependencias necesarias para el proyecto
+- `npm run dev` - Inicia el servidor de desarrollo
+- `npm run build` - Genera el build para producción
+- `npm run lint` - Verifica la calidad del código
+- `npm run preview` - Vista previa del build de producción
 
 
 
