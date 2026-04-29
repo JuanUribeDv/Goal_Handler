@@ -1,9 +1,9 @@
 .sidebar {
   width: 250px;
-  height: 100vh; /* Alto total de la pantalla */
-  background-color: #1a1a1a; /* Un tono oscuro */
+  height: 100vh; 
+  background-color: #1c2030; 
   color: white;
-  position: fixed; /* Se queda quieto aunque hagas scroll */
+  position: fixed; 
   left: 0;
   top: 0;
   display: flex;
