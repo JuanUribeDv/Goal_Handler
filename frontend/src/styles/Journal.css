@@ -19,3 +19,24 @@
   resize: none; 
   outline: none;
 }
+
+.journal-card-header {
+  padding: 10px;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+.journal-card-body {
+  padding: 10px;
+  background-color: #333;
+  border-radius: 12px;
+  color: #d4d4d4;
+}
+.BtnJournal{
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #424345;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}

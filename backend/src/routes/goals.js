@@ -3,7 +3,7 @@ const { pool } = require('../db');
 
 const router = express.Router();
 
-// GET: Obtener todas las metas (sin cambios)
+
 router.get('/', async (req, res) => {
   try {
     const result = await pool.query(

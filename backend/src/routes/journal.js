@@ -18,4 +18,16 @@ router.post('/', async (req, res) => {
     }
 });
 
+router.get('/', async (req, res) => {
+  try {
+    const result = await pool.query(
+      'SELECT contenido FROM diario ORDER BY id DESC'
+    );
+    res.json({ note: result.rows[0]?.contenido || '' });
+  } catch (err) {
+    console.error('Error al leer la entrada del diario:', err);
+    res.status(500).json({ error: 'Error al cargar la nota del diario' });
+  }
+});
+
 module.exports = router;

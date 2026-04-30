@@ -1,11 +1,19 @@
-import { useState, useEffect } from 'react';
+import { useState,useEffect} from 'react';
 import '../styles/Daily_tasks.css';
+import {
+  GetDaily_tasks as GetDaily_TasksService,
+  CreateDaily_tasks as CreateDaily_TasksService
+} from'../services/Daily_tasksservices';
 
 function Daily_tasks() {
   const [showForm, setShowForm] = useState(false);
   const [fecha, setFecha] = useState("");
   const [tasks, setTasks] = useState([{ id: 1, value: "" }]);
   const [nextId, setNextId] = useState(2);
+  const [submitting, setSubmitting] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [dailyTasks, setDailyTasks] = useState([]);
+
 
   const filledCount = tasks.filter((t) => t.value.trim() !== "").length;
 
@@ -28,6 +36,39 @@ function Daily_tasks() {
     setNextId(2);
     setShowForm(true);
   };
+
+  const loadDailyTasks = async () => {
+    setLoading(true);
+    try {
+      const data = await GetDaily_TasksService();
+      setDailyTasks(data);
+    } catch (error) {
+      console.error('Error al cargar las tareas diarias:', error);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setSubmitting(true);
+    const tareasLimpias = tasks.map(t => t.value.trim()).filter(v => v !== "");
+    try{
+      await CreateDaily_TasksService({ fecha, tasks: tareasLimpias });
+      setShowForm(false);
+      loadDailyTasks();
+    } catch (error) {
+      alert(error.response?.data?.error || error.message || "Error guardando programación");
+    } finally {
+      setSubmitting(false);
+    }
+
+  };
+
+  useEffect(() => {
+    loadDailyTasks();
+  }, []);
 
   return (
     <div className="daily_tasks_area">
@@ -117,6 +158,7 @@ function Daily_tasks() {
               <button className="td-btn-add" onClick={handleAddTask}>
                 ＋ Agregar otra tarea
               </button>
+              
             </div>
 
             
@@ -129,7 +171,7 @@ function Daily_tasks() {
               <button
                 className="td-btn-save"
                 disabled={!fecha || filledCount === 0}
-                
+                onClick={handleSubmit}
               >
                 💾 Guardar programación
               </button>
@@ -137,13 +179,32 @@ function Daily_tasks() {
           </div>
         ) : (
           <div className="td-empty">
-            <div className="td-empty-icon">🗓️</div>
-            <div className="td-empty-title">Sin programación activa</div>
-            <div className="td-empty-desc">
-              Haz clic en <strong>"Nueva Programación"</strong> para
-              <br />
-              empezar a organizar tus tareas del día.
-            </div>
+            {loading ? (
+              <p className="loading">Cargando tareas...</p>
+            ) : dailyTasks.length === 0 ? (
+              <p>No hay tareas programadas</p>
+            ) : (
+              <div className="tasks-grid">
+                {dailyTasks.map((task) => (
+                  <div key={task.id} className="task-card">
+                    <div className="task-card-header">
+                      <p>Fecha programada: {task.fecha}</p>
+                      <p>
+                        Tareas a realizar: {
+                          (() => {
+                            try {
+                              return JSON.parse(task.tareas).join(' , ');
+                            } catch (error) {
+                              return task.tareas;
+                            }
+                          })()
+                        }
+                      </p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            )}
           </div>
         )}
       </div>

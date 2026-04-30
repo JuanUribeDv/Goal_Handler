@@ -58,27 +58,27 @@ function Dashboard() {
                     <p className="empty">No hay metas aún. </p>
                     ) : (
                     <div className="goals-grid">
-                    {goals.map(goal => (
-                        <div key={goal.id} className="goal-card">
-                        <div className="goal-card-header">
-                            <div>
-                            <p className="goal-title">{goal.titulo}</p>
-                            <p className="goal-desc">{goal.descripcion}</p>
-                            </div>
-                        </div>
+                        {goals.map(goal => (
+                            <div key={goal.id} className="goal-card">
+                                <div className="goal-card-header">
+                                    <div>
+                                    <p className="goal-title">{goal.titulo}</p>
+                                    <p className="goal-desc">{goal.descripcion}</p>
+                                    </div>
+                                </div>
 
-                        <div className="goal-meta">
-                            <div>
-                            <span className="meta-label">Inicio:</span>{' '}
-                            {goal.fecha_inicio || '-'}
+                                <div className="goal-meta">
+                                    <div>
+                                    <span className="meta-label">Inicio:</span>{' '}
+                                    {goal.fecha_inicio || '-'}
+                                    </div>
+                                    <div>
+                                    <span className="meta-label">Límite:</span>{' '}
+                                    {goal.fecha_limite || '-'}
+                                    </div>
+                                </div>
                             </div>
-                            <div>
-                            <span className="meta-label">Límite:</span>{' '}
-                            {goal.fecha_limite || '-'}
-                            </div>
-                        </div>
-                        </div>
-                    ))}
+                        ))}
                     </div>
                 )}
             </div>
