@@ -110,7 +110,7 @@ function Daily_tasks() {
             <div className="td-form-body">
               
               <div className="td-field-group">
-                <label className="td-label">📅 Fecha de programación</label>
+                <label className="td-label"> Fecha de programación</label>
                 <input
                   type="date"
                   className="td-input"
