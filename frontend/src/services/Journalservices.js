@@ -9,3 +9,8 @@ export const getJournal = async () => {
     const response = await apiClient.get('/api/journal')
     return response.data;
 }
+
+export const deleteJournal = async (id) => {
+    const response = await apiClient.delete(`/api/journal/${id}`)
+    return response.data;
+}

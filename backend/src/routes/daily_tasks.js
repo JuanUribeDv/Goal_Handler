@@ -6,6 +6,8 @@ const router = express.Router();
 router.get('/', async (req, res) => {
   try {
     const result = await pool.query('SELECT * FROM tareas');
+    console.log(typeof result.rows[0].tareas)  
+    console.log(result.rows[0].tareas)    
     res.json(result.rows);
   } catch (error) {
     console.error('GET /api/daily_tasks error:', error);

@@ -185,21 +185,29 @@ function Daily_tasks() {
               <p>No hay tareas programadas</p>
             ) : (
               <div className="tasks-grid">
-                {dailyTasks.map((task) => (
-                  <div key={task.id} className="task-card">
+                {dailyTasks.map((tasky) => (
+                  <div key={tasky.id} className="task-card">
                     <div className="task-card-header">
-                      <p>Fecha programada: {task.fecha}</p>
-                      <p>
-                        Tareas a realizar: {
-                          (() => {
-                            try {
-                              return JSON.parse(task.tareas).join(' , ');
-                            } catch (error) {
-                              return task.tareas;
-                            }
-                          })()
-                        }
-                      </p>
+                      <p>Fecha programada: {new Date(tasky.fecha || '-').toLocaleDateString()}</p>
+                      <div>
+                        <p >Tareas a realizar:</p>
+                        
+                        <ul>
+                          {(() => {
+                            const parsedTareas = Array.isArray(tasky.tareas)
+                              ? tasky.tareas
+                              : JSON.parse(tasky.tareas || "[]");
+
+                            return (
+                              <ul>
+                                {parsedTareas.map((tarea, index) => (
+                                  <li key={index}>{tarea}</li>
+                                ))}
+                              </ul>
+                            );
+                          })()}
+                        </ul>
+                      </div>
                     </div>
                   </div>
                 ))}

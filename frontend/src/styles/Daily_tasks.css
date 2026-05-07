@@ -36,8 +36,8 @@
     
     
 }
-.tittle span {
-    color: #4f8ef7;
+.title span {
+    color: #224582;
 }
 @keyframes tdSlideDown {
     from { opacity: 0; transform: translateY(-14px); }

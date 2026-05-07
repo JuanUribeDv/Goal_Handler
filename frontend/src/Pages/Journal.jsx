@@ -3,7 +3,8 @@ import React from 'react'
 import '../styles/Journal.css'
 import { 
   createJournal as createJournalservice,
-  getJournal as getJournalservice
+  getJournal as getJournalservice,
+  deleteJournal as deleteJournalservice
 } from '../services/Journalservices'
 
 
@@ -13,7 +14,7 @@ function Journal() {
   const [note, setNote] = useState("")
   const [submitting, setSubmitting] = useState(false)
   const [error, setError] = useState(null)
-  const [journal, setJournal] = useState("")
+  const [journals, setJournals] = useState([])
   const [loading, setLoading] = useState(false)
   
 
@@ -27,7 +28,7 @@ function Journal() {
     setLoading(true);
     try {
       const data = await getJournalservice();
-      setJournal(data.note);
+      setJournals(data);
     } catch (err) {
       setError(err.response?.data?.error || err.message || 'Error cargando nota')
     } finally {
@@ -48,14 +49,31 @@ function Journal() {
     setError(null)
 
     try {
-      await createJournalservice({ note });
+      const newJournal = await createJournalservice({ note });
+      setJournals(prev => [newJournal, ...prev]);
       setNote('')
+      localStorage.removeItem('userNote');
     } catch (err) {
       setError(err.response?.data?.error || err.message || 'Error guardando nota')
     } finally {
       setSubmitting(false)
     }
   }
+  const clearJournal = () => {
+    setNote("");
+    localStorage.removeItem('userNote');
+  }
+
+  
+  const handleDelete = async (id) => {
+    try {
+      await deleteJournalservice(id);
+      setJournals(prev => prev.filter(journal => journal.id !== id));
+    } catch (err) {
+      setError(err.response?.data?.error || err.message || 'Error eliminando nota')
+    }
+  }
+  
 
   return (
     <div className='journalPage'>
@@ -66,7 +84,10 @@ function Journal() {
         value={note}
         onChange={handleChange}
       />
-      <button className='BtnJournal' onClick={handleSubmit}>
+      <button className='Btnclear' onClick={clearJournal}>
+        Limpiar Notas
+      </button>
+      <button className='Btnsubmit' onClick={handleSubmit}>
         {submitting ? 'Guardando...' : 'Guardar Notas'}
       </button>
       <div className='journal-card'>
@@ -77,7 +98,19 @@ function Journal() {
           {loading ? (
             <p>Cargando nota...</p>
           ) : (
-            <p>{journal || 'No hay notas guardadas'}</p>
+            journals.map(journal => (
+              <div key={journal.id} className='journal-card-entry'>
+                <div className='header-date'>
+                  <header> Fecha de realización: {new Date(journal.fecha_creacion).toLocaleDateString()}</header>
+                </div>
+                <div className='content-body'>
+                  <p>{journal.contenido}</p>
+                </div>
+                <button className='Btndelete' onClick={() => handleDelete(journal.id)}>
+                  Eliminar
+                </button>
+              </div>
+            ))
           )}
         </div>
       </div>

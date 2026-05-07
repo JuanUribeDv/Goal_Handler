@@ -185,11 +185,11 @@ function Goals() {
                   <div className="goal-meta">
                     <div>
                       <span className="meta-label">Inicio:</span>{' '}
-                      {goal.fecha_inicio || '-'}
+                      {new Date(goal.fecha_inicio || '-').toLocaleDateString()}
                     </div>
                     <div>
                       <span className="meta-label">Límite:</span>{' '}
-                      {goal.fecha_limite || '-'}
+                      {new Date(goal.fecha_limite || '-').toLocaleDateString()}
                     </div>
                   </div>
                 </div>

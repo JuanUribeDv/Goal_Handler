@@ -40,6 +40,15 @@ function Dashboard() {
                 <p>Bienvenido a tu tracker de metas </p>
                 <p>"Muchos quieren una vida extraordinaria, pero pocos están dispuestos a hacer lo que esta vida requiere"</p>
             </div>
+            <h3>KPIS</h3>
+            <div className='Kpis-section'>
+                <div className='Goals-kpi'>
+                     <p>Total de metas: {goals.length}</p>
+                </div>
+                <div className='Tasks-kpi'>
+                    <p>Tareas completadas</p>
+                </div>
+            </div>
             <div className='calendar-section'>
                 <h3>Calendario</h3>
 
@@ -70,11 +79,11 @@ function Dashboard() {
                                 <div className="goal-meta">
                                     <div>
                                     <span className="meta-label">Inicio:</span>{' '}
-                                    {goal.fecha_inicio || '-'}
+                                    {new Date(goal.fecha_inicio || '-').toLocaleDateString()}
                                     </div>
                                     <div>
                                     <span className="meta-label">Límite:</span>{' '}
-                                    {goal.fecha_limite || '-'}
+                                    {new Date(goal.fecha_limite || '-').toLocaleDateString()}
                                     </div>
                                 </div>
                             </div>

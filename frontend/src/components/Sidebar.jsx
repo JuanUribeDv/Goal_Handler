@@ -17,7 +17,6 @@ function Sidebar() {
             </ul>
             <ul className='Prodcutivity'>
                 Productivity
-                <li><Link to="/Focus_mode">Focus Mode</Link></li>
                 <li><Link to="/Daily_tasks">Daily tasks</Link></li>
             </ul>
             <ul className='Achieved'>
