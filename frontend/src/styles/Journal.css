@@ -1,7 +1,6 @@
 .journalPage {
   display: flex;
   flex-direction: column;
-  height: 80vh;
   align-items: center;
 }
 
@@ -16,8 +15,8 @@
   font-family: 'Monocraft', monospace; 
   font-size: 1rem;
   line-height: 1.5;
-  resize: none; 
   outline: none;
+  
 }
 
 .journal-card-header {
@@ -27,16 +26,36 @@
 }
 .journal-card-body {
   padding: 10px;
-  background-color: #333;
-  border-radius: 12px;
   color: #d4d4d4;
 }
-.BtnJournal{
+.Btnclear, .Btndelete{
   margin-top: 20px;
   padding: 10px 20px;
-  background-color: #424345;
+  background-color: #e02e2e;
   color: white;
   border: none;
   border-radius: 5px;
   cursor: pointer;
+}
+.Btnsubmit{
+   margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #28ad19;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+
+.journal-card-entry{
+  background-color: #333;
+  border-radius: 12px;
+  padding: 15px;
+  margin-bottom: 15px;
+  width: 100%;
+}
+.content-body{
+  border-radius: 12px;
+  border-style: groove;
 }

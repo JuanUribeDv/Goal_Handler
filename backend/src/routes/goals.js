@@ -7,7 +7,7 @@ const router = express.Router();
 router.get('/', async (req, res) => {
   try {
     const result = await pool.query(
-      'SELECT id, titulo, descripcion, fecha_inicio, fecha_limite, completada FROM metas ORDER BY id'
+      'SELECT * FROM metas WHERE completada = false ORDER BY id'
     );
     res.json(result.rows);
   } catch (error) {

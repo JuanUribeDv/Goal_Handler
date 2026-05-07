@@ -39,3 +39,21 @@
   align-content: left;
   margin-right: 70%;
 }
+.Kpis-section{
+  display: flex;
+  justify-content: center; 
+  align-items: center;
+  text-align: center;
+  margin-top: 20px;
+  border-color: #000000;
+  padding: 20px;
+  border-radius: 12px;
+  gap: 20px;
+}
+
+.Goals-kpi, .Tasks-kpi {
+  background-color: #292828;
+  color: #f4f5f6;
+  padding: 20px;
+  border-radius: 12px;
+}
