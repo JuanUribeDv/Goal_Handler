@@ -131,58 +131,68 @@ pry_goal_handler/
 ├── .gitignore
 ├── README.md
 │
-├── frontend/
-│   ├── index.html
+├── backend/
 │   ├── package.json
-│   ├── vite.config.js
-│   ├── eslint.config.js
-│   │
-│   ├── public/
-│   │   └── vite.svg
 │   │
 │   └── src/
-│       ├── main.jsx
-│       ├── App.jsx
+│       ├── db.js
+│       ├── index.js
 │       │
-│       ├── assets/
-│       │   └── react.svg
-│       │
-│       ├── components/
-│       │   └── Sidebar.jsx
-│       │
-│       ├── Pages/
-│       │   ├── Dashboard.jsx
-│       │   ├── Focus_mode.jsx
-│       │   ├── Galery.jsx
-│       │   ├── Goals.jsx
-│       │   └── Journal.jsx
-│       │
-│       ├── services/
-│       │   ├── apiClient.js
-│       │   ├── Dashboardservices.js
-│       │   ├── Galeryservices.js
-│       │   ├── Goalservices.js
-│       │   └── Journalservices.js
-│       │
-│       └── styles/
-│           ├── Calendar.css
-│           ├── Dashboard.css
-│           ├── Focus_mode.css
-│           ├── Galery.css
-│           ├── Goals.css
-│           ├── index.css
-│           ├── Journal.css
-│           └── Sidebar.css
+│       └── routes/
+│           ├── daily_tasks.js
+│           ├── galery.js
+│           ├── goals.js
+│           └── journal.js
 │
-└── backend/
+└── frontend/
+    ├── eslint.config.js
+    ├── index.html
     ├── package.json
+    ├── vite.config.js
+    │
+    ├── public/
+    │   └── vite.svg
     │
     └── src/
-        ├── index.js
-        ├── db.js
+        ├── App.jsx
+        ├── main.jsx
         │
-        └── routes/
-            ├── galery.js
-            ├── goals.js
-            └── journal.js
+        ├── assets/
+        │   └── react.svg
+        │
+        ├── components/
+        │   ├── FocusMode.jsx
+        │   └── Sidebar.jsx
+        │
+        ├── contexts/
+        │   └── FocusModeContext.jsx
+        │
+        ├── hooks/
+        │   └── FocusMode.js
+        │
+        ├── Pages/
+        │   ├── Daily_tasks.jsx
+        │   ├── Dashboard.jsx
+        │   ├── Galery.jsx
+        │   ├── Goals.jsx
+        │   └── Journal.jsx
+        │
+        ├── services/
+        │   ├── apiClient.js
+        │   ├── Daily_tasksservices.js
+        │   ├── Dashboardservices.js
+        │   ├── Galeryservices.js
+        │   ├── Goalservices.js
+        │   └── Journalservices.js
+        │
+        └── styles/
+            ├── Calendar.css
+            ├── Daily_tasks.css
+            ├── Dashboard.css
+            ├── Focus_mode.css
+            ├── Galery.css
+            ├── Goals.css
+            ├── index.css
+            ├── Journal.css
+            └── Sidebar.css
 ```
