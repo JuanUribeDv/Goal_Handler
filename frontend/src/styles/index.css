@@ -1,48 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;1,500&family=DM+Sans:wght@300;400;500;600&display=swap');
+ 
+
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #151820;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+ 
+  --bg-base:        #0d1a14;
+  --bg-mid:         #112018;
+  --bg-card:        #162b1e;
+  --bg-card-hover:  #1c3525;
+  --bg-sidebar:     #0b1610;
+ 
+  
+  --gold:           #c9a84c;
+  --gold-dim:       #a07c30;
+  --gold-light:     #e4c87b;
+ 
+  
+  --text-primary:   #e8e4d8;
+  --text-secondary: #8fa895;
+  --text-muted:     #556b5e;
+ 
+  
+  --badge-high:     #c9a84c;
+  --badge-high-bg:  rgba(201, 168, 76, 0.15);
+  --badge-med:      #4c9a6e;
+  --badge-med-bg:   rgba(76, 154, 110, 0.15);
+ 
+  
+  --border:         rgba(201, 168, 76, 0.12);
+  --border-card:    rgba(255, 255, 255, 0.06);
+ 
+  
+  --font-display: 'Playfair Display', Georgia, serif;
+  --font-body:    'DM Sans', sans-serif;
+ 
+  
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 18px;
 }
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
-body {
+ 
+*, *::before, *::after {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  width: 100%;
-  min-height: 100vh;
+}
+ 
+
+html, body, #root {
+  height: 100%;
+}
+ 
+body {
+  font-family: var(--font-body);
+  color: var(--text-primary);
+ 
+  background-color: var(--bg-base);
+  background-image:
+    radial-gradient(ellipse 70% 55% at 15% 20%, #0D2C28 0%, transparent 60%),
+    radial-gradient(ellipse 50% 40% at 50% 50%, #0D2C28 0%, transparent 65%),
+    radial-gradient(ellipse 60% 50% at 90% 90%, #060e09 0%, transparent 60%),
+    linear-gradient(160deg, #0f2218 0%, #0a1810 45%, #060e0a 100%);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
   display: flex;
-  flex-direction: column; /* Esto permite que el contenido fluya hacia abajo */
-  align-items: center;    /* Esto centra horizontalmente todo lo que metas al body */
-  background-color: #151820; /* O tu color oscuro preferido */
-}
-
-.menu {
-  width: 100%;
   min-height: 100vh;
-  padding-left: 250px; /* espacio para la sidebar fija */
-  box-sizing: border-box;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+.main-content {
+  margin-left: 280px;
+  padding: 40px 36px 36px;
+  width: calc(100% - 280px);
 }
+
+@media (max-width: 1024px) {
+  .sidebar {
+    position: relative;
+    width: 100%;
+    min-height: auto;
+  }
+
+  .main-content {
+    margin-left: 0;
+    width: 100%;
+    padding: 24px;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--text-muted);
+  border-radius: 99px;
+}
+ 
+
+
+
+ 
 
 

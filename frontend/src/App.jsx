@@ -17,13 +17,15 @@ function App() {
         <FocusModeWidget />
         <div className='menu'>
           <Sidebar />
-          <Routes>
-            <Route path="/Goals" element={<Goals />} />
-            <Route path="/" element={<Dashboard />} />
-            <Route path="/Journal" element={<Journal />} />
-            <Route path="/Galery" element={<Galery />} />
-            <Route path="/Daily_tasks" element={<Daily_tasks />} />
-          </Routes>
+          <main className='main-content'>
+            <Routes>
+              <Route path="/Goals" element={<Goals />} />
+              <Route path="/" element={<Dashboard />} />
+              <Route path="/Journal" element={<Journal />} />
+              <Route path="/Galery" element={<Galery />} />
+              <Route path="/Daily_tasks" element={<Daily_tasks />} />
+            </Routes>
+          </main>
         </div>
       </Router>
     </FocusModeProvider>

@@ -76,45 +76,82 @@ function Journal() {
   
 
   return (
-    <div className='journalPage'>
-      <title>Goal Tracker</title>
-      <textarea
-        className="notepad"
-        placeholder="Empieza a escribir tus ideas aquí..."
-        value={note}
-        onChange={handleChange}
-      />
-      <button className='Btnclear' onClick={clearJournal}>
-        Limpiar Notas
-      </button>
-      <button className='Btnsubmit' onClick={handleSubmit}>
-        {submitting ? 'Guardando...' : 'Guardar Notas'}
-      </button>
-      <div className='journal-card'>
-        <div className='journal-card-header'>
-          <h2>Notas Guardadas:</h2>
+    <div className="journal">
+ 
+      
+      <div className="hero">
+        <blockquote className="heroQuote">
+          "La escritura es la única forma de pensar sin interrupciones."
+        </blockquote>
+        <p className="heroLabel">REFLEXIONES propias</p>
+      </div>
+ 
+      
+      <div className="content">
+ 
+       
+        <div className="editorCard">
+          <div className="editorHeader">
+            <div>
+              <h2 className="editorTitle">Reflexión de hoy</h2>
+              <p className="editorDate"></p>
+            </div>
+            <div className="toolbar">
+              <button className="toolBtn" aria-label="Negrita"><strong>B</strong></button>
+              <button className="toolBtn" aria-label="Cursiva"><em>I</em></button>
+              <button className="toolBtn" aria-label="Enlace">🔗</button>
+            </div>
+          </div>
+ 
+          <textarea
+            className="editorTextarea"
+            placeholder="Comienza a escribir tu reflexión aquí..."
+            value={note}
+            onChange={handleChange}
+          />
+ 
+          <div className="editorActions">
+            <button className="btnPublish" onClick={handleSubmit}>
+              PUBLICAR EN DIARIO
+            </button>
+            <button className="btnClear" onClick={clearJournal}>
+              LIMPIAR
+            </button>
+          </div>
         </div>
-        <div className='journal-card-body'>
-          {loading ? (
-            <p>Cargando nota...</p>
-          ) : (
-            journals.map(journal => (
-              <div key={journal.id} className='journal-card-entry'>
-                <div className='header-date'>
-                  <header> Fecha de realización: {new Date(journal.fecha_creacion).toLocaleDateString()}</header>
+ 
+        
+        <div className="notesCard">
+          <div className="notesHeader">
+            <h3 className="notesTitle">Notas Guardadas</h3>
+            <button className="notesRefresh" aria-label="Actualizar">↻</button>
+          </div>
+          <div className="notesList">
+            {loading ? (
+                <p>Cargando nota...</p>
+              ) : (
+                <div className="journals-grid">
+                  {journals.map(journal => (
+                    <div key={journal.id} className='journal-card-entry'>
+                      <div className='header-date'>
+                        <header> Fecha de realización: {new Date(journal.fecha_creacion).toLocaleDateString()}</header>
+                      </div>
+                      <div className='content-body'>
+                        <p>{journal.contenido}</p>
+                      </div>
+                      <button className='Btndelete' onClick={() => handleDelete(journal.id)}>
+                        Eliminar
+                      </button>
+                    </div>
+                  ))}
                 </div>
-                <div className='content-body'>
-                  <p>{journal.contenido}</p>
-                </div>
-                <button className='Btndelete' onClick={() => handleDelete(journal.id)}>
-                  Eliminar
-                </button>
-              </div>
-            ))
-          )}
+              )}
+          </div>
         </div>
+ 
       </div>
     </div>
-  )
+  );
+  
 }
 export default Journal
