@@ -3,6 +3,8 @@ import '../styles/Dashboard.css'
 import { getGoals as DashboardGoals } from '../services/Goalservices'
 import Calendar from 'react-calendar'
 import 'react-calendar/dist/Calendar.css'
+import { useNavigate } from 'react-router-dom';
+
 
 
 function Dashboard() {
@@ -11,6 +13,7 @@ function Dashboard() {
     const [loading, setLoading] = useState(false)
     const [error, setError] = useState(null)
     const [selectedDate, setSelectedDate] = useState(new Date())
+    const navigate = useNavigate();
 
     const loadGoals = async () => {
         setLoading(true)
@@ -40,9 +43,9 @@ function Dashboard() {
             <div className="dashboard-morningCard" >
                 <div className="dashboard-morningContent">
                     <blockquote className="dashboard-morningQuote">
-                        "Muchos quieren una vida extraordinaria, pero pocos están dispuestos a hacer lo que esta vida requiere"
+                        "Muchos quieren una vida extraordinaria, pero pocos están dispuestos a hacer lo que esta vida requiere", <i>Robin Sharma.</i>
                     </blockquote>
-                    <button className="dashboard-morningBtn">
+                    <button className="dashboard-morningBtn" onClick={() => navigate('/journal')}>
                         ✏ ESCRIBIR EN EL DIARIO
                     </button>
                 </div>

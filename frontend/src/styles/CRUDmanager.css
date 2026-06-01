@@ -1,0 +1,116 @@
+.crud-manager {
+  width: 100%;
+  max-width: 1260px;
+  margin: 0 auto;
+  padding: 1.5rem;
+  box-sizing: border-box;
+}
+
+.crud-manager__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.crud-manager__title {
+  font-size: 1.9rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.crud-manager__actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.crud-manager__button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.85rem 1.2rem;
+  border-radius: 0.85rem;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.2s ease, background-color 0.15s ease;
+}
+
+.crud-manager__button:hover {
+  transform: translateY(-1px);
+}
+
+.crud-manager__button--primary {
+  background: linear-gradient(135deg, var(--gold), var(--gold-light));
+  color: #0d1a14;
+}
+
+.crud-manager__section {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  background: #161817;
+  border: 1px solid var(--border-card);
+  border-radius: 1.25rem;
+  padding: 1.5rem;
+  overflow: hidden;
+  min-height: 540px;
+  min-width: 800px;
+}
+
+.crud-manager__section > .goal-form-card,
+.crud-manager__section > .page-card {
+  width: 100%;
+  max-width: 1000px;
+}
+
+.crud-manager__list-title {
+  margin: 0 0 1rem;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.crud-manager__empty,
+.crud-manager__loading,
+.crud-manager__error {
+  padding: 1.25rem;
+  border-radius: 1rem;
+}
+
+.crud-manager__error {
+  background: rgba(220, 38, 38, 0.14);
+  color: #fecaca;
+}
+
+.crud-manager__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1rem;
+}
+
+.crud-manager__card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-card);
+  border-radius: 1rem;
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.crud-manager__card--completed {
+  opacity: 0.8;
+  border-color: rgba(76, 154, 110, 0.5);
+  background: linear-gradient(180deg, rgba(76, 154, 110, 0.06), var(--bg-card));
+}
+
+.crud-manager__footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}

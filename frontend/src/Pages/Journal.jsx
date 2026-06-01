@@ -146,6 +146,7 @@ function Journal() {
                   ))}
                 </div>
               )}
+              
           </div>
         </div>
  

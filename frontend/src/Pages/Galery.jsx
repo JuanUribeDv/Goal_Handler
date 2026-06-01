@@ -36,6 +36,12 @@ function Galery(){
 
     return(
         <div className='galeryPage'>
+            <div className="hero">
+                <blockquote className="heroQuote">
+                     "La disciplina de ayer es el éxito de hoy."
+                </blockquote>
+            </div>
+
             <title>Galería</title>
             <h1>Galería de metas</h1>
             <div className='galery-card'>

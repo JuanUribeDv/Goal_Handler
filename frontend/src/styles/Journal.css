@@ -149,7 +149,7 @@
   color: var(--text-primary);
 }
  
-.btnPublish, .btnClear {
+.btnPublish, .btnClear, .Btndelete {
   flex: 1;
   padding: 11px;
   background: var(--gold);
@@ -164,7 +164,7 @@
   transition: background 0.2s;
 }
  
-.btnPublish:hover, .btnClear:hover {
+.btnPublish:hover, .btnClear:hover, .Btndelete:hover {
   background: var(--gold-light);
 }
  
@@ -172,11 +172,18 @@
   list-style: none;
   display: flex;
   flex-direction: column;
-  background-color: #131212;
   border: #0d1a14 1px solid;
   border-radius: var(--radius-lg);
   padding: 30px 20px;
-  gap: 16px;
+}
+
+.journal-card-entry{
+  border: #ffffff 1px solid;
+  border-radius: var(--radius-lg);
+  padding: 30px 20px;
+  gap: 12px;
+  display: flex;
+  flex-direction: column;
 }
 
 .notesCard {
@@ -186,7 +193,7 @@
   padding: 22px 20px;
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  
 }
  
 .notesHeader {
